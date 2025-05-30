@@ -1,0 +1,120 @@
+
+body {
+    margin: 0px;
+    height: 100vh;
+    background: linear-gradient(to top, #9b009b, #2b021a);
+    font-family: "Vidaloka", serif;
+}
+
+.texto-1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+    color: #ecf5fd;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: transparent;
+}
+
+.botao-pricipal {
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px #ecf5fd;
+    font-size: 24px;
+    background: #ecf5fd;
+    color: #080808;
+    padding: 10px 20px;
+    border: solid #000000 3px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.botao-pricipal:hover {
+    background-color: #f2bff2;
+    transform: scale(1.05);
+}
+
+.texto {
+    padding: 16px;
+    text-align: center;
+    color: #ecf5fd;
+}
+
+.texto h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.texto p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Vidaloka", serif;
+    background: linear-gradient(to bottom, #9b009b, #2b021a);
+    color: #ecf5fd;
+    margin: 8px auto;
+    padding: 16px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    overflow: hidden;
+    max-width: 300px;
+    width: 90%;
+}
+
+#top-row, #bottom-row {
+    display: flex;
+    gap: 8px;
+}
+
+#top-row {
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+#bottom-row {
+    font-size: 18px;
+}
+
+#timer span {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+#timer span.changed {
+    transform: scale(1.2);
+    color: #ffccff;
+}
+
+
+.carrossel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 16px;
+    margin-bottom: 32px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 32px;
+    margin: 8px;
+    overflow: hidden;
+}
