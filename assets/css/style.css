@@ -1,4 +1,3 @@
-
 body {
     margin: 0px;
     height: 100%;
@@ -119,13 +118,7 @@ body {
     overflow: hidden;
 }
 
-.container-motivos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 16px;
-}
+
 .motivos {
     display: flex;
     flex-direction: column;
@@ -136,14 +129,30 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
 }
-.motivos h2 {
+
+.container-motivos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+.container-motivos h2 {
     font-size: 24px;
     color: #ecf5fd;
     margin-bottom: 16px;
 }
-img.motivo-img {
-    width: 100%;
-    max-width: 300px;
+.container-motivos p {
+    font-size: 18px;
+    color: #ecf5fd;
+    margin-bottom: 16px;
+}
+.container-motivos img {
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     margin-bottom: 16px;
 }
