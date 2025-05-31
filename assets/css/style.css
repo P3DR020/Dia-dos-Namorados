@@ -156,3 +156,31 @@ body {
     border-radius: 50%;
     margin-bottom: 16px;
 }
+
+/* ...código existente... */
+
+.musica-spotify {
+    text-align: center;
+    margin: 40px 0 60px 0;
+}
+
+.musica-spotify img {
+    width: 250px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.musica-spotify img:hover {
+    transform: scale(1.05);
+}
+
+.musica-spotify p {
+    margin-top: 12px;
+    font-size: 1.2em;
+    color: #1db954; /* Cor do Spotify */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* ...código existente... */
