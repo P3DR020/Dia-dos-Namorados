@@ -1,29 +1,55 @@
-// Faz as imagens do carrossel passarem automaticamente
 let slideIndex = 0;
-showSlides();
+    const slides = document.querySelectorAll('.slides img');
+    let autoSlideInterval;
 
-function showSlides() {
-    const slides = document.querySelectorAll('.slides img'); // Seleciona todas as imagens dentro da classe 'slides'
-    
-    // Esconde todas as imagens
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    function showSlides(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = "none";
+        slide.classList.remove('active');
+      });
+
+      // Wrap index
+      if (index >= slides.length) {
+        slideIndex = 0;
+      } else if (index < 0) {
+        slideIndex = slides.length - 1;
+      } else {
+        slideIndex = index;
+      }
+
+      slides[slideIndex].style.display = "block";
+      slides[slideIndex].classList.add('active');
     }
 
-    // Incrementa o índice do slide
-    slideIndex++;
-
-    // Se passar do número total de slides, volta para o primeiro
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
+    function nextSlide() {
+      showSlides(slideIndex + 1);
     }
 
-    // Exibe o slide atual
-    slides[slideIndex - 1].style.display = "block";
+    function prevSlide() {
+      showSlides(slideIndex - 1);
+    }
 
-    // Troca o slide a cada 2 segundos
-    setTimeout(showSlides, 2000);
-}
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(nextSlide, 2000);
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+
+    // Show initial slide
+    showSlides(slideIndex);
+
+    // Start auto slide
+    autoSlideInterval = setInterval(nextSlide, 3000);
+
 
 // ===================
 // Contador de tempo

@@ -1,7 +1,8 @@
 body {
-    margin: 0px;
+    margin: 8px;
     height: 100%;
     background: linear-gradient(to top, #9b009b, #2b021a);
+    text-align: center;
     
 }
 
@@ -30,51 +31,64 @@ body {
     font-weight: 400;
     font-style: normal;
 }
-
-#timer {
-    font-size: 18px;
-    font-weight: bold;
+/*----------------*/
+.love-counter {
     font-family: "Vidaloka", serif;
-    background: linear-gradient(to bottom, #9b009b, #2b021a);
-    color: #ecf5fd;
-    margin: 24px auto;
+    text-align: center;
+    margin: 24px ;
     padding: 16px;
-    border-radius: 32px;
+    max-width: 400px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #db2777, #9333ea) 1;
+
+}
+
+.love-counter h2 {
+    font-family: playfair display, serif;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 8px;
+    color: #ecf5fd;
+}
+
+.love-counter p {
+    font-size: 16px;
+    color: #ecf5fd;
+    margin-bottom: 16px;
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.counter-box {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #db2777, #9333ea) 1;
+    border-radius: 8px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-    overflow: hidden;
-    max-width: 300px;
-    width: 90%;
 }
 
-#top-row, #bottom-row {
-    display: flex;
-    gap: 8px;
+.counter-box span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ecf5fd;
 }
 
-#top-row {
-    margin-bottom: 8px;
-    font-size: 22px;
-}
-
-#bottom-row {
-    font-size: 18px;
-}
-
-#timer span {
-    transition: all 0.3s ease-in-out;
-    transform: scale(1);
-}
-
-#timer span.changed {
-    transform: scale(1.2);
-    color: #ffccff;
+.counter-box small {
+    font-size: 12px;
+    color: #ecf5fd;
 }
 
 
+
+/*----------------*/
 .carrossel {
     position: relative;
     max-width: 100%;
@@ -86,6 +100,8 @@ body {
 .slides {
     display: flex;
     transition: transform 0.5s ease;
+    position: relative;
+    height: 400px;
 }
 
 .slides img {
@@ -94,6 +110,47 @@ body {
     border-radius: 32px;
     margin: 8px;
     overflow: hidden;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.slides img.active {
+    display: block;
+    position: relative;
+    opacity: 1;
+}
+
+.btn-carousel {
+    position: absolute;
+    top: 90%;
+    transform: translateY(-50%);
+    background-color: #fbcfe8cc; /* pink-200 with opacity */
+    border-radius: 9999px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease;
+    z-index: 10;
+    border:#9b009b solid 2px;
+}
+
+.btn-carousel:hover {
+    color: #be185d; /* pink-700 */
+}
+
+.btn-prev {
+    left: 1.5rem;
+}
+
+.btn-next {
+    right: 1.5rem;
 }
 
 
@@ -119,8 +176,8 @@ body {
     justify-content: center;
     margin: 16px;
     padding: 16px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #db2777, #9333ea) 1;
 }
 .container-motivos h2 {
     font-size: 24px;
@@ -144,30 +201,53 @@ body {
 
 /* ...código existente... */
 
-.musica-spotify {
-    text-align: center;
-    margin: 40px 0 60px 0;
+.heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: transparent;
 }
 
-.musica-spotify img {
-    width: 250px;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
+.heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    background-color: #ecf5fd;
+    transform: rotate(-45deg);
+    animation: pulse 1.0s infinite;
 }
 
-.musica-spotify img:hover {
-    transform: scale(1.05);
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    background-color: #ecf5fd;
+    border-radius: 50%;
 }
 
-.musica-spotify p {
-    margin-top: 12px;
-    font-size: 1.2em;
-    color: #1db954; /* Cor do Spotify */
-    font-weight: bold;
-    text-decoration: underline;
+.heart::before {
+    top: -50px;
+    left: 0;
 }
 
-/* ...código existente... */
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+@keyframes pulse {
+0% {
+    transform: rotate(-45deg) scale(1);
+}
+50% {
+    transform: rotate(-45deg) scale(1.1);
+}
+100% {
+    transform: rotate(-45deg) scale(1);
+}
+}
 
 
