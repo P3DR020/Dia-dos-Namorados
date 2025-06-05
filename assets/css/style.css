@@ -2,55 +2,33 @@ body {
     margin: 0px;
     height: 100%;
     background: linear-gradient(to top, #9b009b, #2b021a);
-    font-family: "Vidaloka", serif;
+    
 }
 
-.texto-1 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 40px;
-    color: #ecf5fd;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: transparent;
-}
-
-.botao-pricipal {
-    border-radius: 8px;
-    box-shadow: 4px 4px 4px #ecf5fd;
-    font-size: 24px;
-    background: #ecf5fd;
-    color: #080808;
-    padding: 10px 20px;
-    border: solid #000000 3px;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
-}
-
-.botao-pricipal:hover {
-    background-color: #f2bff2;
-    transform: scale(1.05);
-}
 
 .texto {
     padding: 16px;
     text-align: center;
     color: #ecf5fd;
+    
+    
 }
 
 .texto h1 {
-    font-size: 40px;
+    font-size: 46px;
     margin: 20px auto;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .texto p {
     font-size: 20px;
     margin: 20px auto;
+    font-family: "Coming Soon", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #timer {
@@ -119,6 +97,10 @@ body {
 }
 
 
+
+/* ...código existente... */
+
+
 .motivos {
     display: flex;
     flex-direction: column;
@@ -143,19 +125,22 @@ body {
 .container-motivos h2 {
     font-size: 24px;
     color: #ecf5fd;
-    margin-bottom: 16px;
+    margin: 16px;
 }
 .container-motivos p {
     font-size: 18px;
     color: #ecf5fd;
-    margin-bottom: 16px;
+    margin: 16px;
+    text-align: center;
 }
 .container-motivos img {
     width: 250px;
     height: 250px;
-    border-radius: 50%;
-    margin-bottom: 16px;
+    border-radius: 24px;
+    margin: 16px;
 }
+
+
 
 /* ...código existente... */
 
@@ -184,3 +169,5 @@ body {
 }
 
 /* ...código existente... */
+
+

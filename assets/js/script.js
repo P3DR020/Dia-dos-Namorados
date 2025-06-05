@@ -102,3 +102,79 @@ function updateTimer() {
 // Inicializa o contador e atualiza a cada segundo
 updateTimer();
 setInterval(updateTimer, 1000);
+
+
+
+
+// Carrossel de motivos
+
+
+
+
+let motivoIndex = 0;
+const motivoSlides = document.querySelector('.motivos-slides');
+const motivos = document.querySelectorAll('.motivo');
+const motivoIndicatorsContainer = document.querySelector('.motivo-indicators');
+
+// Criar os indicadores
+motivos.forEach((_, index) => {
+    const indicator = document.createElement('span');
+    indicator.addEventListener('click', () => {
+        motivoIndex = index;
+        updateMotivoSlide();
+        resetMotivoAutoSlide();
+    });
+    motivoIndicatorsContainer.appendChild(indicator);
+});
+
+const motivoIndicators = document.querySelectorAll('.motivo-indicators span');
+
+function updateMotivoSlide() {
+    const slideWidth = motivos[0].offsetWidth;
+    motivoSlides.style.transform = `translateX(-${motivoIndex * slideWidth}px)`;
+    motivoIndicators.forEach(ind => ind.classList.remove('active'));
+    motivoIndicators[motivoIndex].classList.add('active');
+}
+
+document.querySelector('.motivo-next').addEventListener('click', () => {
+    motivoIndex = (motivoIndex + 1) % motivos.length;
+    updateMotivoSlide();
+    resetMotivoAutoSlide();
+});
+
+document.querySelector('.motivo-prev').addEventListener('click', () => {
+    motivoIndex = (motivoIndex - 1 + motivos.length) % motivos.length;
+    updateMotivoSlide();
+    resetMotivoAutoSlide();
+});
+
+// Auto slide
+let motivoAutoSlide = setInterval(() => {
+    motivoIndex = (motivoIndex + 1) % motivos.length;
+    updateMotivoSlide();
+}, 4000);
+
+function resetMotivoAutoSlide() {
+    clearInterval(motivoAutoSlide);
+    motivoAutoSlide = setInterval(() => {
+        motivoIndex = (motivoIndex + 1) % motivos.length;
+        updateMotivoSlide();
+    }, 10000);
+}
+
+updateMotivoSlide();
+
+
+//Chuva de corações tela principal//
+
+const totalHearts = 50;
+
+  for (let i = 0; i < totalHearts; i++) {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 2 + Math.random() * 3 + "s";
+    heart.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(heart);
+  }
+  
