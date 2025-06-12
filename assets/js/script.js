@@ -56,7 +56,7 @@ let slideIndex = 0;
 // ===================
 
 // Define a data de início do contador (7 de julho de 2024)
-const startDate = new Date(2024, 6, 7, 0, 0, 0); // Lembre-se: mês começa em 0 (janeiro),entao julho e 6,
+const startDate = new Date(2022, 7, 20, 0, 0, 0); // Lembre-se: mês começa em 0 (janeiro),entao julho e 6,
 
 // Função para animar a troca de valor no contador
 function animateChange(id, newValue) {
